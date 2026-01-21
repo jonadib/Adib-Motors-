@@ -1585,7 +1585,7 @@ it is defined individually for each card below */
 
 .business-btn:hover {
     background: #fff;
-    transform: translateX(-50%) translateY(-5px);
+    transform: translateX(-50%);
     box-shadow: 0 15px 40px rgba(217, 255, 102, 0.3);
 }
 
@@ -1725,7 +1725,7 @@ it is defined individually for each card below */
     }
 
     .business-btn:hover {
-        transform: translateY(-5px);
+        transform: translateX(-50%);
     }
 }
 

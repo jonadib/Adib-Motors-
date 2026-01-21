@@ -89,9 +89,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="disclaimer-text">
-                THIS PROJECT WAS DEVELOPED BY TALIS PORTFOLIO AND IS NOT A REAL PROJECT. INSPIRED BY THE WEBSITE OF RACING DRIVER LANDO NORRIS.
-            </div>
+         
         </footer>
     );
 }
