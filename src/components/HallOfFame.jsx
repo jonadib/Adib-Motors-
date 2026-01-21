@@ -1,5 +1,7 @@
+import React, { useMemo } from 'react';
+
 function HallOfFame() {
-    const helmets = [
+    const helmetImages = [
         '/helmet/helmet-collection1.png',
         '/helmet/helmet-collection2.png',
         '/helmet/helmet-collection3.png',
@@ -22,6 +24,19 @@ function HallOfFame() {
         '/helmet/helmet-collection20.png',
     ];
 
+    const helmets = useMemo(() => {
+        return helmetImages.map((img) => {
+            const year = Math.floor(Math.random() * (2025 - 2018 + 1)) + 2018;
+            const locations = ["Silverstone", "Monaco", "Monza", "Spa", "Suzuka", "Austin", "Interlagos", "Le Mans", "Catalunya", "Sepang"];
+            const location = locations[Math.floor(Math.random() * locations.length)];
+            return {
+                img,
+                year,
+                location
+            };
+        });
+    }, []);
+
     return (
         <section className="hall-of-fame-section">
             <div className="hof-header">
@@ -37,7 +52,12 @@ function HallOfFame() {
             <div className="helmet-grid">
                 {helmets.map((helmet, index) => (
                     <div key={index} className="helmet-card">
-                        <img src={helmet} className="helmet-img" alt={`Helmet ${index + 1}`} />
+                        <img src={helmet.img} className="helmet-img" alt={`Helmet ${index + 1}`} />
+                        <div className="helmet-info">
+                            <span className="helmet-year">{helmet.year}</span>
+                            <span className="helmet-separator">•</span>
+                            <span className="helmet-location">{helmet.location}</span>
+                        </div>
                     </div>
                 ))}
             </div>

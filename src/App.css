@@ -520,7 +520,44 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.helmet-info {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.helmet-card:hover .helmet-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.helmet-year {
+    color: #D9FF66;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.helmet-separator {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.helmet-location {
+    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .helmet-card {
