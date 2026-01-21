@@ -161,6 +161,25 @@ body {
     letter-spacing: -1px;
 }
 
+.cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #D9FF66;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 .rubik-storm-regular {
     font-family: "Rubik Storm", system-ui;
     font-weight: 400;
