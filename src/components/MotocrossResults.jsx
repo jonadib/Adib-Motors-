@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function MotocrossResults() {
-    const [activeYear, setActiveYear] = useState(null);
+    const [activeYear, setActiveYear] = useState(2024);
 
     const toggleYear = (year) => {
         setActiveYear(activeYear === year ? null : year);
