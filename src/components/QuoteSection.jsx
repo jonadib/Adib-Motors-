@@ -18,6 +18,15 @@ function QuoteSection() {
         cleanImgRef.current.style.clipPath = `circle(0px at 50% 50%)`;
     };
 
+    const handleTouchMove = (e) => {
+        if (!dustCardRef.current || !cleanImgRef.current) return;
+        const rect = dustCardRef.current.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        cleanImgRef.current.style.clipPath = `circle(70px at ${x}px ${y}px)`;
+    };
+
     return (
         <section className="quote-interstitial">
             <img src="/landing/grunge-top.png" className="grunge-top" alt="Grunge Top" />
@@ -39,6 +48,7 @@ function QuoteSection() {
                     ref={dustCardRef}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
+                    onTouchMove={handleTouchMove}
                 >
                     <img src="/landing/dust.jpg" alt="Dusty Helmet" />
                     <img
