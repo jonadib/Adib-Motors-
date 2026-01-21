@@ -1,0 +1,149 @@
+/* Menu Overlay Styles */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(40, 44, 32, 0.98);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.menu-overlay.menu-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hamburger Menu Button - Matching Close Button Position */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 100;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+}
+
+.menu-line {
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Close Button - Same size and position as hamburger */
+.menu-close {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+.menu-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Navigation Links */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.menu-nav a {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-nav a:hover {
+    color: #D9FF66;
+    transform: translateX(10px);
+}
+
+/* Social Links */
+.menu-social {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.menu-social a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.menu-social a:hover {
+    color: #D9FF66;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-btn {
+        top: 30px;
+        right: 20px;
+    }
+
+    .menu-close {
+        top: 30px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+
+    .menu-nav a {
+        font-size: 2rem;
+    }
+
+    .menu-social {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
