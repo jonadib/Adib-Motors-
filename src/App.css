@@ -1587,7 +1587,6 @@ it is defined individually for each card below */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 25px 0;
     position: relative;
-    z-index: 5;
 }
 
 .brand-track {
@@ -1657,7 +1656,7 @@ it is defined individually for each card below */
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     .fight-heading {
-        font-size: 16vw;
+        font-size: 12vw;
     }
 
     .fight-container {
@@ -1668,36 +1667,50 @@ it is defined individually for each card below */
 
     /* Adjust Layout for Mobile */
     .fight-nav-layer {
-        position: relative;
-        flex-direction: column;
-        text-align: center;
-        transform: none;
-        top: 0;
-        gap: 40px;
-        margin-top: 20px;
+        position: absolute;
+        /* Keep absolute to overlap like desktop */
+        flex-direction: row;
+        /* Parallel */
+        justify-content: space-between;
+        text-align: left;
+        /* Reset text align */
+        transform: translateY(-50%);
+        top: 60%;
+        /* Adjust vertical position */
+        gap: 20px;
+        margin-top: 0;
+        width: 100%;
+        padding: 0 20px;
     }
 
-    .nav-col.left,
+    .nav-col {
+        text-align: left;
+    }
+
     .nav-col.right {
-        text-align: center;
+        text-align: right;
     }
 
     .floating-helmet {
-        width: 260px;
+        width: 80%;
+        /* Make it responsive */
+        max-width: 300px;
+    }
+
+    /* Ensure ticker animates on mobile */
+    .brand-track {
+        animation: scrollTicker 15s linear infinite;
+        /* Force animation */
+        width: max-content;
     }
 
     .business-btn {
-        width: 80%;
-        text-align: center;
-        bottom: 0;
-        position: relative;
-        /* Release absolute on mobile */
-        margin-top: 70px;
-        transform: none;
-        left: 0;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        margin: 0;
     }
 
     .business-btn:hover {
@@ -1767,4 +1780,47 @@ it is defined individually for each card below */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.8s ease-out;
+}
+
+@media (max-width: 480px) {
+    .manifesto-text {
+        font-size: 2rem;
+    }
+
+    .tech-title {
+        font-size: 3rem;
+    }
+
+    .hof-title-main {
+        font-size: 2.5rem;
+    }
+
+    .hof-title-sub {
+        font-size: 3rem;
+    }
+
+    .mx-main-title {
+        font-size: 2.5rem;
+    }
+
+    .mx-sub-title {
+        font-size: 2.5rem;
+    }
+
+    .race-title-bold {
+        font-size: 3rem;
+    }
+
+    .race-title-italic {
+        font-size: 3.5rem;
+    }
+
+    .helmet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .helmet-card {
+        border-radius: 8px;
+    }
 }
