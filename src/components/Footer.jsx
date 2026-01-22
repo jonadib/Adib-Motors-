@@ -36,10 +36,11 @@ function Footer() {
                 <div className="fight-helmet-layer">
                     <div className="helmet-anim-wrapper">
                         <img
-                            src="/helmet/helmet-collection1.png"
+                            src="/helmet/helmet-collection1.webp"
                             className="interactive-helmet"
                             id="helmet3D"
                             alt="3D Helmet"
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -89,7 +90,7 @@ function Footer() {
                 </div>
             </div>
 
-         
+
         </footer>
     );
 }

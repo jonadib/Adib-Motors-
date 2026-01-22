@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 function RaceStats() {
     const raceData = [
-        { round: '01', location: 'Bahrain GP', date: '02 Mar', finish: 'P1', lap: '1:31.447', img: '/collection/fifteen.png' },
-        { round: '02', location: 'Saudi Arabia', date: '09 Mar', finish: 'P2', lap: '1:29.300', img: '/collection/second.png' },
-        { round: '03', location: 'Australia', date: '24 Mar', finish: 'DNF', lap: '1:19.813', img: '/collection/third.png' },
-        { round: '04', location: 'Japan GP', date: '07 Apr', finish: 'P1', lap: '1:33.700', img: '/collection/fourth.png' },
-        { round: '05', location: 'China GP', date: '21 Apr', finish: 'P1', lap: '1:35.500', img: '/collection/fifth.png' },
-        { round: '06', location: 'Miami GP', date: '05 May', finish: 'P2', lap: '1:30.100', img: '/collection/sixth.png' },
-        { round: '07', location: 'Emilia Romagna', date: '19 May', finish: 'P1', lap: '1:18.900', img: '/collection/seven.png' },
-        { round: '08', location: 'Monaco GP', date: '26 May', finish: 'P3', lap: '1:12.900', img: '/collection/eight.png' },
-        { round: '09', location: 'Canada GP', date: '09 Jun', finish: 'P1', lap: '1:14.600', img: '/collection/nine.png' },
-        { round: '10', location: 'Spain GP', date: '23 Jun', finish: 'P1', lap: '1:15.800', img: '/collection/ten.png' },
-        { round: '11', location: 'Austria GP', date: '30 Jun', finish: 'P2', lap: '1:06.900', img: '/collection/el.png' },
-        { round: '12', location: 'British GP', date: '07 Jul', finish: 'P1', lap: '1:28.500', img: '/collection/twelve.jpg' },
+        { round: '01', location: 'Bahrain GP', date: '02 Mar', finish: 'P1', lap: '1:31.447', img: '/collection/fifteen.webp' },
+        { round: '02', location: 'Saudi Arabia', date: '09 Mar', finish: 'P2', lap: '1:29.300', img: '/collection/second.webp' },
+        { round: '03', location: 'Australia', date: '24 Mar', finish: 'DNF', lap: '1:19.813', img: '/collection/third.webp' },
+        { round: '04', location: 'Japan GP', date: '07 Apr', finish: 'P1', lap: '1:33.700', img: '/collection/fourth.webp' },
+        { round: '05', location: 'China GP', date: '21 Apr', finish: 'P1', lap: '1:35.500', img: '/collection/fifth.webp' },
+        { round: '06', location: 'Miami GP', date: '05 May', finish: 'P2', lap: '1:30.100', img: '/collection/sixth.webp' },
+        { round: '07', location: 'Emilia Romagna', date: '19 May', finish: 'P1', lap: '1:18.900', img: '/collection/seven.webp' },
+        { round: '08', location: 'Monaco GP', date: '26 May', finish: 'P3', lap: '1:12.900', img: '/collection/eight.webp' },
+        { round: '09', location: 'Canada GP', date: '09 Jun', finish: 'P1', lap: '1:14.600', img: '/collection/nine.webp' },
+        { round: '10', location: 'Spain GP', date: '23 Jun', finish: 'P1', lap: '1:15.800', img: '/collection/ten.webp' },
+        { round: '11', location: 'Austria GP', date: '30 Jun', finish: 'P2', lap: '1:06.900', img: '/collection/el.webp' },
+        { round: '12', location: 'British GP', date: '07 Jul', finish: 'P1', lap: '1:28.500', img: '/collection/twelve.webp' },
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -71,6 +71,7 @@ function RaceStats() {
                         id="raceImage"
                         alt="Race"
                         style={{ opacity: imageOpacity }}
+                        loading="lazy"
                     />
                 </div>
             </div>

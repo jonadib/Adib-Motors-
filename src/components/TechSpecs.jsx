@@ -41,7 +41,7 @@ function TechSpecs() {
             </div>
 
             <div className="rider-container">
-                <img src="/collection/el.png" className="rider-image" alt="Rider with Bike" />
+                <img src="/collection/el.webp" className="rider-image" alt="Rider with Bike" loading="lazy" />
 
                 {hotspots.map((spot) => (
                     <div key={spot.id} className={`hotspot ${spot.className}`}>

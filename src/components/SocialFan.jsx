@@ -1,12 +1,12 @@
 function SocialFan() {
     const cards = [
-        '/collection/first.png',
-        '/collection/second.png',
-        '/collection/third.png',
-        '/collection/fifteen.png',
-        '/collection/nine.png',
-        '/collection/ten.png',
-        '/collection/seven.png',
+        '/collection/first.webp',
+        '/collection/second.webp',
+        '/collection/third.webp',
+        '/collection/fifteen.webp',
+        '/collection/nine.webp',
+        '/collection/ten.webp',
+        '/collection/seven.webp',
     ];
 
     return (
@@ -25,7 +25,7 @@ function SocialFan() {
             <div className="fan-cards-container">
                 {cards.map((card, index) => (
                     <div key={index} className={`fan-card card-${index + 1}`}>
-                        <img src={card} alt={`Card ${index + 1}`} />
+                        <img src={card} alt={`Card ${index + 1}`} loading="lazy" />
                     </div>
                 ))}
             </div>

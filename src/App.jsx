@@ -1,17 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import './App.css';
 import Hero from './components/Hero';
-import Manifesto from './components/Manifesto';
-import Collection from './components/Collection';
-import TechSpecs from './components/TechSpecs';
-import HallOfFame from './components/HallOfFame';
-import QuoteSection from './components/QuoteSection';
-import RaceStats from './components/RaceStats';
-import MotocrossResults from './components/MotocrossResults';
-import SocialFan from './components/SocialFan';
-import Footer from './components/Footer';
-import Menu from './components/Menu';
 import LoadingScreen from './components/LoadingScreen';
+import Menu from './components/Menu';
+
+const Manifesto = lazy(() => import('./components/Manifesto'));
+const Collection = lazy(() => import('./components/Collection'));
+const TechSpecs = lazy(() => import('./components/TechSpecs'));
+const HallOfFame = lazy(() => import('./components/HallOfFame'));
+const QuoteSection = lazy(() => import('./components/QuoteSection'));
+const RaceStats = lazy(() => import('./components/RaceStats'));
+const MotocrossResults = lazy(() => import('./components/MotocrossResults'));
+const SocialFan = lazy(() => import('./components/SocialFan'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -83,40 +84,43 @@ function App() {
       <div id="home">
         <Hero />
       </div>
-      <div id="mission">
-        <Manifesto />
-      </div>
-      <div id="gallery">
-        <Collection />
-      </div>
-      <TechSpecs />
 
-      {/* Tire Track Divider */}
-      <div style={{ width: '100%', overflow: 'hidden', background: '#111111' }}>
-        <img
-          src="/landing/t.png"
-          alt="Tire Track"
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-            objectFit: 'cover'
-          }}
-        />
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div id="mission">
+          <Manifesto />
+        </div>
+        <div id="gallery">
+          <Collection />
+        </div>
+        <TechSpecs />
 
-      <div id="helmets">
-        <HallOfFame />
-      </div>
-      <QuoteSection />
-      <RaceStats />
-      <MotocrossResults />
-      <div id="store">
-        <SocialFan />
-      </div>
-      <div id="contact">
-        <Footer />
-      </div>
+        {/* Tire Track Divider */}
+        <div style={{ width: '100%', overflow: 'hidden', background: '#111111' }}>
+          <img
+            src="/landing/t.webp"
+            alt="Tire Track"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'cover'
+            }}
+          />
+        </div>
+
+        <div id="helmets">
+          <HallOfFame />
+        </div>
+        <QuoteSection />
+        <RaceStats />
+        <MotocrossResults />
+        <div id="store">
+          <SocialFan />
+        </div>
+        <div id="contact">
+          <Footer />
+        </div>
+      </Suspense>
     </>
   );
 }

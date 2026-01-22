@@ -29,7 +29,7 @@ function QuoteSection() {
 
     return (
         <section className="quote-interstitial">
-            <img src="/landing/grunge-top.png" className="grunge-top" alt="Grunge Top" />
+            <img src="/landing/grunge-top.webp" className="grunge-top" alt="Grunge Top" loading="lazy" />
 
             <div className="quote-inner">
                 <div className="quote-text">
@@ -50,13 +50,14 @@ function QuoteSection() {
                     onMouseLeave={handleMouseLeave}
                     onTouchMove={handleTouchMove}
                 >
-                    <img src="/landing/dust.jpg" alt="Dusty Helmet" />
+                    <img src="/landing/dust.webp" alt="Dusty Helmet" loading="lazy" />
                     <img
-                        src="/landing/clean1.jpg"
+                        src="/landing/clean1.webp"
                         className="clean-img"
                         id="cleanImg"
                         ref={cleanImgRef}
                         alt="Clean Helmet"
+                        loading="lazy"
                     />
                 </div>
             </div>
